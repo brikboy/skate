@@ -1,5 +1,4 @@
 # Session 01
-------------
 - Create ground and idle image using gimp
     + Learn about layers
     + Learn about image sizing
@@ -7,14 +6,12 @@
     + Learn about exporting image
 
 # Session 02
-------------
 - Setup Unity Project
     + Learn about navigating the basic environment
 - Get familiar with unity environment
  
 
 # Session 03
-------------
 - Create idle player animation in gimp
     + Learn about frames and creating different images
     + Learn to preview the animation in using playback
@@ -23,7 +20,6 @@
 - Implement idle player animation in unity
 
 # Session 04 - Moving the Player
---------------------------------
 - Familiarize with the scripting system in unity
 - Create a C# script name `PlayerController`
     + C# is a object oriented language
@@ -58,7 +54,6 @@
     ```
  
 # Session 05 - Animate the Moving Player
---------------------------------
 - Create `run` state animation
     + Add parameter named `speed` in the animator control
     + Make a transition from `idle` to `run` when speed is > .01
