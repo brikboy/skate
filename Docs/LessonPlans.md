@@ -61,14 +61,14 @@
 
 # Session 06 - Flip the Character
 - Create a new function to flip
-    ```
-        void Flip() {
-            facingRight = !facingRight;
-            Vector3 scale = transform.localScale;
-            scale.x = scale.x * -1;
-            transform.localScale = scale;
-        }
-    ```
+```
+    void Flip() {
+        facingRight = !facingRight;
+        Vector3 scale = transform.localScale;
+        scale.x = scale.x * -1;
+        transform.localScale = scale;
+    }
+```
 - What is an conditional statement?
 - Add flip to the update calls
 ```
