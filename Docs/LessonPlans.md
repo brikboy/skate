@@ -79,4 +79,5 @@ if (move > 0 &&!facingRight) {
 }
 ```
 
+# Session 07 - Getting the Character to Jump
 
