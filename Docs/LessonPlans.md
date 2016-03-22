@@ -111,6 +111,27 @@ anim.SetBool("Ground", grounded);
 - Create animator param name Grounded
 
 # Session 08 - Camera Tracking & restart
+- Create CameraController script and link to camera
+```
+public Transform player;
+public Vector3 offset;
+
+void Update () {
+	    transform.position = new Vector3 (player.position.x + offset.x, player.position.y + offset.y, offset.z);
+	}
+ ```
+- set offset to 3,3,-20
+- set size to 20
+
+- to reset the game we need to reload it
+```
+void Update() {
+        if (Input.GetKeyDown(KeyCode.Return)) {
+        Application.LoadLevel(0);
+        }
+    }
+```
+        
 
 # Session 09 - Obstacles and money
 
