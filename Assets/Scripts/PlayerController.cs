@@ -3,9 +3,14 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
+    bool grounded = false;
+    public Transform groundCheck;
+    float groundRadius = 0.2f;
+    public LayerMask whatIsGround;
     float maxSpeed = 20f;
     Animator anim;
     bool facingRight = true;
+    float jumpForce = 700f;
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +19,11 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
+        grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+        anim.SetBool("Ground", grounded);
+
+
         float move = Input.GetAxis("Horizontal");
         GetComponent<Rigidbody2D>().velocity = new Vector2(move * maxSpeed, GetComponent<Rigidbody2D>().velocity.y);
         anim.SetFloat("Speed", Mathf.Abs(move));
@@ -24,9 +34,16 @@ public class PlayerController : MonoBehaviour {
         } else if (move < 0 && facingRight)
         {
             Flip(); 
-
         }
 	}
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Space)  && grounded)
+        {
+            GetComponent<Rigidbody2D>().AddForce(new Vector2(0, jumpForce));
+        }
+    }
 
     void Flip()
     {
