@@ -80,4 +80,32 @@ if (move > 0 &&!facingRight) {
 ```
 
 # Session 07 - Getting the Character to Jump
+```
+void Update() {
+    if (grounded && Input.GetKeyDown(KeyCode.Space)) {
+        anim.SetBool("Ground", false);
+        ridigbody2D.AddForce(new Vector2(0, jumpForce);
+    }
+}
+```
+
+```
+bool grounded = false;
+public Transform groundCheck;
+float groundRadius = 0.2f;
+public LayerMask whatIsGround;
+
+... in Fixed updated
+grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+anim.SetBool("Ground", grounded);
+
+```
+- Create Empty object, call it GroundCheck
+- Nest it under the character
+- Pick an icon so we can see it
+- click and drag to where the ground should be under the character
+- drag and drop ground check object ont Controler script
+- put player on the player layer
+- Select whatIsGround to be everything except play
+- Create animator param name Grounded
 
