@@ -80,4 +80,61 @@ if (move > 0 &&!facingRight) {
 ```
 
 # Session 07 - Getting the Character to Jump
+```
+void Update() {
+    if (grounded && Input.GetKeyDown(KeyCode.Space)) {
+        anim.SetBool("Ground", false);
+        ridigbody2D.AddForce(new Vector2(0, jumpForce);
+    }
+}
+```
 
+```
+bool grounded = false;
+public Transform groundCheck;
+float groundRadius = 0.2f;
+public LayerMask whatIsGround;
+public float jumpForce = 700f;
+
+... in Fixed updated
+grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+anim.SetBool("Ground", grounded);
+
+```
+- Create Empty object, call it GroundCheck
+- Nest it under the character
+- Pick an icon so we can see it
+- click and drag to where the ground should be under the character
+- drag and drop ground check object ont Controler script
+- put player on the player layer
+- Select whatIsGround to be everything except play
+- Create animator param name Grounded
+
+# Session 08 - Camera Tracking & restart
+- Create CameraController script and link to camera
+```
+public Transform player;
+public Vector3 offset;
+
+void Update () {
+	    transform.position = new Vector3 (player.position.x + offset.x, player.position.y + offset.y, offset.z);
+	}
+ ```
+- set offset to 3,3,-20
+- set size to 20
+
+- to reset the game we need to reload it
+```
+void Update() {
+        if (Input.GetKeyDown(KeyCode.Return)) {
+        Application.LoadLevel(0);
+        }
+    }
+```
+        
+
+# Session 09 - Obstacles and money
+
+# Session 10 - Timer/Counters
+
+# Session 11 - Build a bigger World
