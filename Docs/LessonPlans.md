@@ -94,6 +94,7 @@ bool grounded = false;
 public Transform groundCheck;
 float groundRadius = 0.2f;
 public LayerMask whatIsGround;
+public float jumpForce = 700f;
 
 ... in Fixed updated
 grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
