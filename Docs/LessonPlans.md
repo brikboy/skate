@@ -110,3 +110,10 @@ anim.SetBool("Ground", grounded);
 - Select whatIsGround to be everything except play
 - Create animator param name Grounded
 
+# Session 08 - Camera Tracking & restart
+
+# Session 09 - Obstacles and money
+
+# Session 10 - Timer/Counters
+
+# Session 11 - Build a bigger World
